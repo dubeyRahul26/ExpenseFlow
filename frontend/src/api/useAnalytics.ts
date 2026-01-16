@@ -4,7 +4,7 @@ import {
   fetchMonthlyAnalytics,
   fetchCategoryAnalytics
 } from "./analytics";
-import type { Key } from "react";
+import type { Key} from "react";
 
 /* ---------- TYPES ---------- */
 
