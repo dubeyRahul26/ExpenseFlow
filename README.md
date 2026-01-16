@@ -93,10 +93,10 @@ Built with a **modern frontend + secure backend architecture**, focused on corre
 
 ## Tech Stack
 
-### Frontend
+### Frontend Stack
 
 | Layer | Technology |
-|-----|-----------|
+| ----- | ---------- |
 | Framework | React + Vite |
 | Language | TypeScript |
 | Styling | Tailwind CSS |
@@ -105,10 +105,10 @@ Built with a **modern frontend + secure backend architecture**, focused on corre
 | Charts | Recharts |
 | Real-time | Socket.io |
 
-### Backend
+### Backend Stack
 
 | Layer | Technology |
-|------|-----------|
+| ----- | ---------- |
 | Runtime | Node.js |
 | Framework | Express |
 | Language | TypeScript |
@@ -177,6 +177,8 @@ cd frontend
 npm install
 npm run dev
 ```
+
+---
 
 ## Design Principles
 
