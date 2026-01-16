@@ -76,84 +76,51 @@ const Expenses = () => {
                      border border-slate-800 shadow-lg"
         >
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-            {/* Amount */}
-            <div>
-              <label htmlFor="amount" className="sr-only">
-                Expense amount
-              </label>
-              <input
-                id="amount"
-                title="Expense amount"
-                aria-label="Expense amount"
-                className="w-full rounded-lg p-3 text-sm
-                           bg-slate-800 text-slate-100
-                           border border-slate-700
-                           placeholder-slate-400
-                           focus:outline-none focus:ring-2
-                           focus:ring-indigo-500"
-                placeholder="Amount"
-                type="number"
-                min="0.01"
-                step="0.01"
-                value={amount}
-                onChange={e => setAmount(e.target.value)}
-                required
-              />
-            </div>
+            <input
+              className="w-full rounded-lg p-3 text-sm
+                         bg-slate-800 text-slate-100
+                         border border-slate-700
+                         placeholder-slate-400
+                         focus:outline-none focus:ring-2
+                         focus:ring-indigo-500"
+              placeholder="Amount"
+              type="number"
+              value={amount}
+              onChange={e => setAmount(e.target.value)}
+              required
+            />
 
-            {/* Category */}
-            <div>
-              <label htmlFor="category" className="sr-only">
-                Expense category
-              </label>
-              <select
-                id="category"
-                title="Expense category"
-                aria-label="Expense category"
-                className="w-full rounded-lg p-3 text-sm
-                           bg-slate-800 text-slate-100
-                           border border-slate-700
-                           focus:outline-none focus:ring-2
-                           focus:ring-indigo-500"
-                value={category}
-                onChange={e => setCategory(e.target.value)}
-                required
-              >
-                <option value="" className="bg-slate-900">
-                  Select category
+            <select
+              className="w-full rounded-lg p-3 text-sm
+                         bg-slate-800 text-slate-100
+                         border border-slate-700
+                         focus:outline-none focus:ring-2
+                         focus:ring-indigo-500"
+              value={category}
+              onChange={e => setCategory(e.target.value)}
+              required
+            >
+              <option value="" className="bg-slate-900">
+                Select category
+              </option>
+              {CATEGORIES.map(cat => (
+                <option key={cat} value={cat} className="bg-slate-900">
+                  {cat}
                 </option>
-                {CATEGORIES.map(cat => (
-                  <option
-                    key={cat}
-                    value={cat}
-                    className="bg-slate-900"
-                  >
-                    {cat}
-                  </option>
-                ))}
-              </select>
-            </div>
+              ))}
+            </select>
 
-            {/* Description */}
-            <div>
-              <label htmlFor="description" className="sr-only">
-                Expense description
-              </label>
-              <input
-                id="description"
-                title="Expense description"
-                aria-label="Expense description"
-                className="w-full rounded-lg p-3 text-sm
-                           bg-slate-800 text-slate-100
-                           border border-slate-700
-                           placeholder-slate-400
-                           focus:outline-none focus:ring-2
-                           focus:ring-indigo-500"
-                placeholder="Description (optional)"
-                value={description}
-                onChange={e => setDescription(e.target.value)}
-              />
-            </div>
+            <input
+              className="w-full rounded-lg p-3 text-sm
+                         bg-slate-800 text-slate-100
+                         border border-slate-700
+                         placeholder-slate-400
+                         focus:outline-none focus:ring-2
+                         focus:ring-indigo-500"
+              placeholder="Description (optional)"
+              value={description}
+              onChange={e => setDescription(e.target.value)}
+            />
           </div>
 
           <button
@@ -165,9 +132,7 @@ const Expenses = () => {
                        hover:from-indigo-600 hover:to-violet-600
                        disabled:opacity-50 transition"
           >
-            {createExpense.isPending
-              ? "Adding..."
-              : "Add Expense"}
+            {createExpense.isPending ? "Adding..." : "Add Expense"}
           </button>
         </form>
       )}
@@ -181,7 +146,12 @@ const Expenses = () => {
           </h2>
         </div>
 
-        <div className="max-h-105 overflow-y-auto divide-y divide-slate-800">
+        <div
+          className="max-h-105 overflow-y-auto divide-y divide-slate-800
+                     [&::-webkit-scrollbar]:w-1.5
+                     [&::-webkit-scrollbar-thumb]:bg-slate-700
+                     [&::-webkit-scrollbar-thumb]:rounded-full"
+        >
           {isLoading && (
             <p className="p-5 text-slate-400">
               Loading expenses…

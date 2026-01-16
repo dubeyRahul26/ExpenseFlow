@@ -24,13 +24,13 @@ interface StatCardProps {
 const StatCard = ({ title, value, loading, highlight }: StatCardProps) => (
   <div
     className="relative rounded-xl overflow-hidden
-                  bg-slate-900/70 backdrop-blur
-                  border border-slate-800
-                  p-5 shadow-lg hover:shadow-indigo-500/10 transition"
+               bg-slate-900/70 backdrop-blur
+               border border-slate-800
+               p-5 shadow-lg hover:shadow-indigo-500/10 transition"
   >
     <div
       className="absolute inset-x-0 top-0 h-1
-                    bg-linear-to-r from-indigo-500 to-violet-500"
+                 bg-linear-to-r from-indigo-500 to-violet-500"
     />
 
     <p className="text-sm text-slate-400">{title}</p>
@@ -62,7 +62,7 @@ const Dashboard = () => {
     return (
       <div
         className="rounded-lg border border-rose-500/30
-                      bg-rose-500/10 p-4 text-rose-400"
+                   bg-rose-500/10 p-4 text-rose-400"
       >
         Failed to load dashboard data
       </div>
@@ -75,7 +75,9 @@ const Dashboard = () => {
     <div className="space-y-8 animate-[fadeIn_0.3s_ease-out]">
       {/* Header */}
       <div>
-        <h1 className="text-2xl font-bold text-slate-100">Dashboard</h1>
+        <h1 className="text-2xl font-bold text-slate-100">
+          Dashboard
+        </h1>
         <p className="mt-1 text-slate-400">
           Overview of your expenses and balances
         </p>
@@ -118,7 +120,7 @@ const Dashboard = () => {
       {/* Recent Expenses */}
       <div
         className="rounded-xl bg-slate-900/70 backdrop-blur
-                      border border-slate-800 shadow-lg"
+                   border border-slate-800 shadow-lg"
       >
         <div className="p-5 border-b border-slate-800">
           <h2 className="text-lg font-semibold text-slate-100">
@@ -126,7 +128,12 @@ const Dashboard = () => {
           </h2>
         </div>
 
-        <div className="max-h-90 overflow-y-auto divide-y divide-slate-800">
+        <div
+          className="max-h-90 overflow-y-auto divide-y divide-slate-800
+                     [&::-webkit-scrollbar]:w-1.5
+                     [&::-webkit-scrollbar-thumb]:bg-slate-700
+                     [&::-webkit-scrollbar-thumb]:rounded-full"
+        >
           {isLoading && (
             <div className="p-5 space-y-3">
               <div className="h-4 bg-slate-700 rounded w-3/4 animate-pulse" />
